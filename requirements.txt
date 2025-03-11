@@ -1,0 +1,10 @@
+ctranslate2
+librosa
+transformers
+torch
+hydra-core
+prometheus-client
+gradio
+coqui-tts
+numpy==1.26.4  # set numpy in this version as coqui-tts uses 'numpy>=1.25.2,<2.0'
+
