@@ -1,0 +1,24 @@
+# Telemetry config for Prometheus
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+
+rule_files:
+  - alerts.yml
+
+scrape_configs:
+  - job_name: 'stem-tutor'
+    static_configs:
+      - targets: ['localhost:9090']
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: '(vram_usage_bytes|peak_vram_bytes|total_vram_bytes)'
+        target_label: __name__
+        replacement: '${1}_gb'
+        action: replace
+      - source_labels: [__name__]
+        regex: '(vram_usage_bytes|peak_vram_bytes|total_vram_bytes)'
+        expression: '(.*)'
+        replacement: '(${1} / 1073741824)'
+        target_label: __value__
+        action: replace

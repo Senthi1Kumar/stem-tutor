@@ -1,0 +1,5 @@
+model_name: "openai/whisper-tiny"
+
+paths:
+  ct2_model: "${oc.env:MODEL_DIR,models}/whisper-tiny-ct2"
+  test_audo: ${hydra:runtime.cwd}/data/audio.mp3

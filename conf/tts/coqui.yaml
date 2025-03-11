@@ -1,0 +1,6 @@
+model_name: 'tts_models/en/vctk/vits' # 'tts_models/en/ljspeech/glow-tts' # "tts_models/multilingual/multi-dataset/xtts_v2"
+default_output_path: "output.wav"
+default_speaker: "p347" 
+# default_language: "en"
+enable_playback: true
+optimize_for_realtime: true

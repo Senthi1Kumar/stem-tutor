@@ -1,0 +1,21 @@
+groups:
+- name: hardware
+  rules:
+  - alert: HighVRAMUsage
+    expr: |
+      (vram_usage_bytes{component="Whisper"} / 1024/1024/1024) +
+      (vram_usage_bytes{component="SciLlama-3.2-3B"} / 1024/1024/1024) +
+      (vram_usage_bytes{component="Coqui-TTS"} / 1024/1024/1024) > 3.5
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "VRAM usage exceeding 3.5/4GB capacity"
+      
+  - alert: HighLatency
+    expr: |
+      llm_latency_seconds > 10
+      OR
+      stt_latency_seconds > 5
+    labels:
+      severity: warning

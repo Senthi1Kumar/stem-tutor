@@ -169,3 +169,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# misc
+.vscode/
+wandb/
+unsloth_compiled_cache/
+_unsloth_temporary_saved_buffers/
+scillama-3.2-3b_outputs/
+outputs/
+output.wav

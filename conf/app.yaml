@@ -1,0 +1,32 @@
+defaults:
+  - _self_
+  - stt: whisper
+  - llm: llama
+  - tts: coqui
+  - telemetry: prometheus
+  
+app:
+  name: "STEM Tutor"
+  host: "0.0.0.0"  
+  port: 7860       
+  share: false 
+
+ui:
+  css: |
+    #response-box {
+        font-size: 1.1em;
+        line-height: 1.6;
+        padding: 20px;
+    }
+    .compact-slider {
+        max-width: 250px;
+    }
+    .input-column {
+        border-right: 1px solid #e0e0e0;
+        padding-right: 20px;
+    }
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
