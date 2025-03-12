@@ -1,4 +1,4 @@
-# STEM Tutor - Interactive Learning Assistant
+# STEM Tutor
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![CUDA 12.6](https://img.shields.io/badge/CUDA-12.x-lightgreen.svg?logo=NVIDIA)](https://developer.nvidia.com/cuda-toolkit)
