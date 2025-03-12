@@ -1,3 +1,4 @@
 model:
   model_name_or_lora_path: "models/SciLlama-3.2-3b-lora" # Our fine-tuned LoRA adapter
   max_seq_length: 1024
+  max_new_tokens: 256

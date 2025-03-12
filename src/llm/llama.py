@@ -19,6 +19,7 @@ class SciLlama:
         self.cfg = cfg
         self.model_name = cfg.model.model_name_or_lora_path
         self.max_seq_length = cfg.model.max_seq_length
+        self.max_new_tokens = cfg.model.max_new_tokens
         self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
         self.load_model()
 
@@ -43,7 +44,7 @@ class SciLlama:
 
     @telemetry.track_vram('SciLlama-3.2-3B')
     @telemetry.track_latency(telemetry.llm_latency)
-    def generate(self, query, max_new_tokens=256, temperature=0.7):
+    def generate(self, query, temperature=0.7):
         temperature = max(0.1, min(1.0, temperature))
 
         prompt = [
@@ -66,7 +67,7 @@ class SciLlama:
         outputs = self.model.generate(
             inputs,
             streamer=self.streamer,
-            max_new_tokens=max_new_tokens,
+            max_new_tokens=self.max_new_tokens,
             temperature=temperature,
             top_p = 0.9 if temperature > 0.5 else 1.0,
             do_sample= temperature > 0.1,
