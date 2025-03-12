@@ -55,7 +55,6 @@ uv venv .venv
 # Activate it:
 source .venv/bin/activate # Windows: .venv\Scripts/activate
 
-
 # Install the requirements:
 # For venv
 pip install -r requirements.txt
@@ -93,9 +92,9 @@ after that move `whisper-medium-ct2` under `models` folder, and adjust the path 
     - Method: LoRA
     - Dataset: 8.8k science Q&A pairs from Sonnet-3.5
     - Libraries:
-        - Unsloth for 4-bit training and inference.
-        - TRL for model alignment.
-        - W&B for tracking the training process
+        - [Unsloth](https://github.com/unslothai/unsloth) for 4-bit training and inference.
+        - [TRL](https://huggingface.co/docs/trl/en/index) for model alignment.
+        - [W&B](https://wandb.ai) for tracking the training process
     
 - Optimizations:
     - Inference with 4-bit quantization
@@ -105,8 +104,8 @@ after that move `whisper-medium-ct2` under `models` folder, and adjust the path 
 - Model: `tts_models/en/vctk/vits`
 - Features:
     - Real-time audio synthesis
-    - Over 108 English speaker voices
-- Configuration: You can adjust or change the models in `onf/tts/coqui.yaml`
+    - Over 109 English speaker voices
+- Configuration: You can adjust or change the models in `conf/tts/coqui.yaml`
 
 ## Configurations
 
