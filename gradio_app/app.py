@@ -37,7 +37,7 @@ class STEMTutorApp:
             props = torch.cuda.get_device_properties(0)
             info.append(f"GPU: {props.name} | VRAM: {props.total_memory/1024/1024/1024:.2f}GB |")
         info.append(f"STT Model: {self.cfg.stt.model_name} |")
-        info.append(f"LLM Model: {self.cfg.llm.model.lora_path.split('/')[1]} |")
+        info.append(f"LLM Model: {self.cfg.llm.model.model_name_or_lora_path.split('/')[1]} |")
         info.append(f"TTS Model: {self.cfg.tts.model_name} |")
         return "\n".join(info)
 
